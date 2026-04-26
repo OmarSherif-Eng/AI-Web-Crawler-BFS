@@ -1,28 +1,18 @@
 # AI Web Crawler - BFS Algorithm 🕷️
 
-This is a Python project I built to explore how search engine crawlers (like Google) navigate the web. It uses the **Breadth-First Search (BFS)** algorithm to traverse a simulated network of web pages and map out their connections level by level.
+A Python-based crawler that simulates search engine behavior using the **Breadth-First Search (BFS)** algorithm to traverse, analyze, and map interconnected web pages.
 
-## 📌 Why I built this
-I wanted to see how algorithms like BFS can be applied to real-world structures like the internet. Instead of just "finding a path," this crawler systematically visits every page at a certain "depth" before moving deeper, ensuring a complete map of the site's structure.
+## 🚀 What's New in this Version? (Advanced Graph Analysis)
+The core logic has been heavily upgraded to include deep structural analysis of the web graph:
+* **Tree-Style Visualization:** Generates a clean, level-by-level CLI tree diagram (`+-- [Level X]`) to easily visualize the hierarchy of the traversal.
+* **Isolated Node Detection:** Automatically calculates and lists **Unreachable Pages** that cannot be accessed from the given root node.
+* **Dead-End Identification:** Scans the network for nodes/pages with zero outbound links (Dead-ends).
+* **Smart Input Validation:** Ensures the crawler respects strict boundary conditions, validating root page existence and enforcing a max search depth (1 to 4).
 
-## 🛠️ How it Works (The Logic)
-The project is split into two main parts:
-1. **Graph Construction:** I used a `Dictionary` (Hash Map) to represent the website's structure (Adjacency List), where every page is a "node" and its links are "edges".
-2. **BFS Traversal:** * I used a `Queue` (via Python's `collections.deque`) to manage the order of pages to visit.
-   * I implemented a `Visited Set` (Hash Set) to make sure the crawler doesn't get stuck in infinite loops by visiting the same page twice.
-   * The crawler respects a **Max Depth** limit, so it doesn't run forever and stays focused on the target area.
+## 🛠️ Core Tech & Logic
+* **Graph Representation:** Built using an Adjacency List via Python `Dictionaries`.
+* **Traversal Engine:** Utilizes Python's `collections.deque` for optimized, thread-safe queue operations.
+* **State Management:** Implements `Hash Sets` for O(1) time complexity when tracking visited nodes, preventing infinite loops.
 
-## ⚙️ Features
-* **Efficient Traversal:** Uses BFS to ensure level-by-level mapping.
-* **Smart Data Management:** Uses Hash-based structures for O(1) lookup time when checking visited pages.
-* **Scalable:** Can handle complex simulated networks defined in a simple text file.
-
-## 🚀 Tech Stack
-* **Language:** Python 3.x
-* **Core Algorithm:** Breadth-First Search (BFS)
-* **Data Structures:** Queues, Sets, and Dictionaries (Hash Maps)
-
-## 📁 Project Structure
-* `crawler_bfs.py`: The main engine that runs the BFS logic.
-* `graph_builder.py`: A helper script that builds and loads the website map.
-* `website_data.txt`: The simulated "web" data.
+## 🧠 Why this matters?
+This project demonstrates a practical application of Data Structures (Graphs, Queues, Hash Maps) and algorithms to solve real-world mapping problems, mimicking the foundational logic of tools like Googlebot.
